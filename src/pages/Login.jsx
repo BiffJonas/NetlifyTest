@@ -6,7 +6,7 @@ const Login = () => {
 	const handleOnSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch("http://localhost:5000/login", {
+			await fetch("http://localhost:5000/login", {
 				method: "POST",
 				headers: { "Content-type": "application/json" },
 				body: JSON.stringify({

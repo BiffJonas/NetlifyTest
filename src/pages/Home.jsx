@@ -6,7 +6,7 @@ const Home = ({ header, imgSource, description }) => {
 			<h1>{header}</h1>
 			<img
 				src={imgSource}
-				alt="picture"
+				alt="fruit"
 			/>
 			<p>{description}</p>
 		</>

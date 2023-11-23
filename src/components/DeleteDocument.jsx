@@ -5,13 +5,10 @@ const DeleteDocument = () => {
 	const handleDelete = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(
-				`http://localhost:5000/api/collection/${documentID}`,
-				{
-					method: "DELETE",
-					headers: { "Content-Type": "application/json" },
-				}
-			);
+			await fetch(`http://localhost:5000/api/collection/${documentID}`, {
+				method: "DELETE",
+				headers: { "Content-Type": "application/json" },
+			});
 		} catch (err) {
 			console.error(err);
 		}

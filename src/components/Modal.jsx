@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Modal = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
@@ -12,18 +12,15 @@ const Modal = () => {
 				selectedImage.includes("svg") || selectedImage.includes("jpeg");
 
 			if (validSelectedImage && description && header) {
-				const response = await fetch(
-					"http://localhost:5000/api/collection/insert",
-					{
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({
-							header: header,
-							image: selectedImage,
-							description: description,
-						}),
-					}
-				);
+				await fetch("http://localhost:5000/api/collection/insert", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						header: header,
+						image: selectedImage,
+						description: description,
+					}),
+				});
 			} else throw new Error("not valid");
 		} catch (err) {
 			console.log(err);

@@ -5,14 +5,11 @@ const InsertDocument = () => {
 	const handleAddDocument = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(
-				"http://localhost:5000/api/collection/insert",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ document: document }),
-				}
-			);
+			await fetch("http://localhost:5000/api/collection/insert", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ document: document }),
+			});
 		} catch (err) {
 			console.error("client: " + err);
 		}
