@@ -10,8 +10,9 @@ function App() {
 			<Router>
 				<Routes>
 					<Route
-						path="/"
 						element={<Home />}
+						path="/"
+						exact={true}
 					/>
 					<Route
 						path="/login"
